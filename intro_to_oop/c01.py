@@ -212,7 +212,7 @@ def get_user_input(prompt: str) -> tuple[int, int]:
       row = Board._ROWS.index(input_str[1])
       return (7 - row, col)
     except ValueError:
-      print("Invalid input. Please enter a valid chess notation (e.g., 'd2').")
+      print("Invalid input. Please enter a valid chess notation (e.g. 'd2').")
 
 
 def main():
@@ -220,7 +220,7 @@ def main():
   while True:
     print(board)
     start = get_user_input(
-        "Enter the coordinates of the piece to move (e.g., 'd2'): ")
+        "Enter the coordinates of the piece to move (e.g. 'd2'): ")
     piece = board.get(*start)
     if piece is None:
       print("No piece at the given coordinates. Try again.")
@@ -231,7 +231,7 @@ def main():
       continue
     print("Piece can move to:", ", ".join(
         [Board._COLUMNS[x] + Board._ROWS[7 - y] for y, x in moves]))
-    end = get_user_input("Enter the coordinates to move to (e.g., 'd2'): ")
+    end = get_user_input("Enter the coordinates to move to (e.g. 'd2'): ")
     if board.move(start, end):
       print("Move successful.")
     else:
