@@ -55,8 +55,8 @@ print(f"{mammal.name}, {mammal.species}, {mammal.make_sound()}, {mammal.give_bir
 print(f"{dog.name}, {dog.species}, {dog.make_sound()}, {dog.give_birth()}")
 
 # A reptile inherits the name, species, and make sound properties/methods from animal
-# And has an extra method lay_eggs
-print(f"{reptile.name}, {reptile.species}, {reptile.make_sound()}, {reptile.lay_eggs()}")
+# And has an extra method lay_eggs, and an extra property is_venomous
+print(f"{reptile.name}, {reptile.species}, {reptile.is_venomous}, {reptile.make_sound()}, {reptile.lay_eggs()}")
 
 # Private attributes/methods cannot be accessed directly, but can be accessed through public methods
 
