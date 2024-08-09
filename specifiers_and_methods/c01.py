@@ -28,7 +28,7 @@ class BankAccount: # Class for bank account
     # If this is not included, printing the class will show <__main__.BankAccount object at some address>
     def __repr__(self): 
         return f"Account Number: {self.__account_number}\nBalance: {self.__balance}"
-    
+
 
 
 # Creating an instance of BankAccount
@@ -38,8 +38,9 @@ account = BankAccount("1234567890", 1000)
 try:
     print(account.__account_number)
 except Exception as err:
-    print(f"Error detected: {err}")
+    print(f"Error caught: {err}")
 
+print(account.account_number) # Access via getter (NO brackets because @property is used)
 print(account.get_balance()) # Access via getter
 
 account.deposit(200) # deposit 200

@@ -36,7 +36,7 @@
             "tests": [
                 {
                     "in": [],
-                    "out": ""
+                    "out": "Checking out the book.\nReturning the book.\nDisplaying information about the book.\nMy Library\nChecking out the DVD.\nReturning the DVD.\nDisplaying information about the DVD.\nMy Library"
                 }
             ]
         }
