@@ -1,41 +1,53 @@
-class Animal: # Animal class
-    def __init__(self, name, species):
-        self.name = name
-        self.species = species
-        self.__age = "some generic age"  # Private property
+class Animal:
+  '''Animal class as base class'''
 
-    def make_sound(self):
-        return "Some generic animal sound"
+  def __init__(self, name, species):
+    self.name = name
+    self.species = species
+    self.__age = "some generic age"  # Private property
 
-    def age(self):
-        return self.__age
+  def make_sound(self):
+    return "Some generic animal sound"
 
-class Mammal(Animal): # Mammal inherits from animal
-    def __init__(self, name, species, is_warm_blooded=True):
-        super().__init__(name, species)
-        self.is_warm_blooded = is_warm_blooded
+  def age(self):
+    return self.__age
 
-    def give_birth(self):
-        return "Gives birth to live young"
 
-    def age(self):
-        return self.__age
+class Mammal(Animal):
+  '''Mammal class inherits from Animal class'''
 
-class Reptile(Animal): # Reptile inherits from animal
-    def __init__(self, name, species, is_venomous=False):
-        super().__init__(name, species)
-        self.is_venomous = is_venomous
+  def __init__(self, name, species, is_warm_blooded=True):
+    super().__init__(name, species)
+    self.is_warm_blooded = is_warm_blooded
 
-    def lay_eggs(self):
-        return "Lays eggs"
+  def give_birth(self):
+    return "Gives birth to live young"
 
-class Dog(Mammal): # Dog inherits from mammal
-    def __init__(self, name, breed):
-        super().__init__(name, species="Dog")
-        self.breed = breed
+  def age(self):
+    return self.__age
 
-    def make_sound(self):  # Overriding method
-        return "Bark"
+
+class Reptile(Animal):
+  '''Reptile class inherits from Animal class'''
+
+  def __init__(self, name, species, is_venomous=False):
+    super().__init__(name, species)
+    self.is_venomous = is_venomous
+
+  def lay_eggs(self):
+    return "Lays eggs"
+
+
+class Dog(Mammal):
+  '''Dog class inherits from Mammal class'''
+
+  def __init__(self, name, breed):
+    super().__init__(name, species="Dog")
+    self.breed = breed
+
+  def make_sound(self):  # Overriding method
+    return "Bark"
+
 
 # Create instances of each class
 generic_animal = Animal("GenericAnimal", "GenericSpecies")
@@ -65,15 +77,15 @@ print(generic_animal.age())
 
 # This should cause an error as the mammal did not inherit the private property age from animal
 try:
-    print(mammal.age())
+  print(mammal.age())
 except AttributeError as err:
-    print("Caught an AttributeError:", err)
+  print("Caught an AttributeError:", err)
 
 # This should cause an error as the dog inherited the faulty method age() from mammal
 try:
-    print(dog.age())
+  print(dog.age())
 except AttributeError as err:
-    print("Caught an AttributeError:", err)
+  print("Caught an AttributeError:", err)
 
 # This works fine because the Reptile class inherits the public method age() from the Animal class
 print(reptile.age())

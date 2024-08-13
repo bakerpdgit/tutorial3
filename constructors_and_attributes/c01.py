@@ -14,7 +14,7 @@ class Person:
     # The constructor is a function and can therefore have any code inside it, though it's rare that we want to do
     # anything other than set attributes. In real code a print statement like this might be in a separate function
     # so callers don't have to announce a birth every time they create a new object.
-    print(self.full_name + " was born!")
+    print(f"{self.full_name} was born aged {self.age}")
 
 
 # Creating an instance by calling the class name as a function causes the constructor `__init__` to be called with the
