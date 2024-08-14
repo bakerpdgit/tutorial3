@@ -54,9 +54,9 @@ my_dog = Dog("Panda", 7, "012345678901234")
 # get attributes
 print(my_dog.name, my_dog.___, my_dog.microchip_id)
 
-employee.age += 1  # increase age
-employee.name = "Pandu"  # change name
-employee.microchip_id = "987654321098765"  # change microchip id
+my_dog.age += 1  # increase age
+my_dog.name = "Pandu"  # change name
+my_dog.microchip_id = "987654321098765"  # change microchip id
 
 # get updated attributes
 print(my_dog.name, my_dog.age, my_dog.____________)
