@@ -26,6 +26,16 @@
       "id": "ABSTRACTANDSTATIC",
       "name": "Abstract and Static Methods",
       "bookLink": "./abstract_and_static/book.json"
+    },
+    {
+      "id": "LFDSAQ",
+      "name": "Lists as dynamic Stacks and Queues",
+      "bookLink": "./lists_for_dynamic_stacks_and_queues/book.json"
+    },
+    {
+      "id": "HASH",
+      "name": "Hash Table Implementation",
+      "bookLink": "./hash_tables/book.json"
     }
   ]
 }
