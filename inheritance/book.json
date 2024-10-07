@@ -1,0 +1,56 @@
+{
+	"name": "Inheritance",
+    "id": "inher",
+    "children": [
+        {
+            "id": "inher01",
+            "name": "Ex. 1 (example)",
+            "guide": "./c01.md",
+            "py": "./c01.py",
+			"isExample": "True"
+        },
+        {
+            "id": "inher02",
+            "name": "Ex. 2 (example)",
+            "guide": "./c02.md",
+            "py": "./c02.py",
+			"isExample": "True"
+        },
+        {
+            "id": "inher03",
+            "name": "Ex. 3 (task)",
+            "guide": "c03.md",
+            "py": "c03.py",
+            "tests": [
+                {"in": [], "out": [
+                    {"typ": "s+", "statement": "dir(Planet())", "pattern": "get_volume"},
+                    {"typ": "s+", "statement": "dir(Planet())", "pattern": "get_density"},
+                    {"typ": "s+", "statement": "dir(Planet())", "pattern": "get_surface_gravity"},
+                    {"typ": "s+", "statement": "TerrestrialPlanet.__bases__", "pattern": "Planet"},
+                    {"typ": "s+", "statement": "GasGiant.__bases__", "pattern": "Planet"},
+                    {"typ": "s+", "statement": "IceGiant.__bases__", "pattern": "Planet"}
+                ]}
+			]
+        },
+        {
+            "id": "inher04",
+            "name": "Ex. 4 (example)",
+            "guide": "c04.md",
+            "py": "c04.py",
+			"isExample": "True"
+        },
+        {
+            "id": "encap05",
+            "name": "Ex. 5 (task)",
+            "guide": "c05.md",
+            "py": "c05.py",
+            "tests": [
+                {"in": [], "out": [
+                    {"typ": "c+", "pattern": "super\\(\\)\\.__init__\\(paper_size, ['\"]fancy['\"]\\)", "ignore": "w"},
+                    {"typ": "c+", "pattern": "did_succeed = super\\(\\)\\.print\\(string\\)", "ignore": "w"},
+                    {"typ": "c+", "count": 2, "pattern": "super\\(\\)\\.print\\(string\\)", "ignore": "w"}
+                ]}
+			]
+        }
+    ]
+}

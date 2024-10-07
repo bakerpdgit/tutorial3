@@ -11,6 +11,16 @@
             "id": "CONATT",
             "name": "Constructors and Attributes",
             "bookLink": "./constructors_and_attributes/book.json"
+		},
+      {
+            "id": "INHER",
+            "name": "Inheritance",
+            "bookLink": "./inheritance/book.json"
+		},
+      {
+            "id": "ENCAP",
+            "name": "Encapsulation",
+            "bookLink": "./encapsulation/book.json"
 		}
     ]
 }

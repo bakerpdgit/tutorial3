@@ -55,17 +55,17 @@ class Printer:
 
 class DeluxePrinter(Printer):
     def __init__(self, paper_size):
-        super().__init__(paper_size, "fancy")
+        ___
 
     def charge_credits(self):
         print(f"You have been charged 10 credits for a full restock")
 
     def print(self, string):
-        success = super().print(string)
-        if not success:
+        did_succeed = ___
+        if not did_succeed:
             self.charge_credits()
             self.restock()
-            super().print(string)
+            ___
 
     def print_diagnostic_page(self):
         self.print(f"Deluxe printer with {self.stock} pages")

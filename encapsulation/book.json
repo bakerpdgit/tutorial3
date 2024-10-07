@@ -1,0 +1,66 @@
+{
+	"name": "Encapsulation",
+    "id": "encap",
+    "children": [
+        {
+            "id": "encap01",
+            "name": "Ex. 1 (example)",
+            "guide": "./c01.md",
+            "py": "./c01.py",
+			"isExample": "True"
+        },
+        {
+            "id": "encap02",
+            "name": "Ex. 2 (task)",
+            "guide": "c02.md",
+            "py": "c02.py",
+            "tests": [
+                {"in": [], "out": [
+                    {"typ": "c+", "pattern": "self\\.__vehicles"},
+                    {"typ": "c+", "pattern": "self\\._name"},
+                    {"typ": "c+", "pattern": "self\\.registration"},
+                    {"typ": "c+", "pattern": "self\\.__location"},
+                    {"typ": "c+", "pattern": "self\\.__fuel"},
+                    {"typ": "c+", "pattern": "def dispatch"},
+                    {"typ": "c+", "pattern": "def locate_by"},
+                    {"typ": "c+", "pattern": "def __get_vehicle"},
+                    {"typ": "c+", "pattern": "def travel"},
+                    {"typ": "c+", "pattern": "def locate\\("},
+                    {"typ": "c+", "pattern": "def __get_distance"},
+                    {"typ": "c+", "pattern": "def _move_distance"}
+                ]}
+			]
+        },
+        {
+            "id": "encap03",
+            "name": "Ex. 3 (example)",
+            "guide": "c03.md",
+            "py": "c03.py",
+			"isExample": "True"
+        },
+        {
+            "id": "encap04",
+            "name": "Ex. 4 (task)",
+            "guide": "c04.md",
+            "py": "c04.py",
+            "tests": [
+                {"in": [], "out": [
+                    {"typ": "c+", "pattern": "self\\.__fuel_mass"},
+                    {"typ": "c+", "pattern": "self\\.__oxygen_mass"},
+                    {"typ": "c+", "pattern": "self\\.__structure_mass"},
+                    {"typ": "c+", "pattern": "self\\.__passenger_capacity"},
+                    {"typ": "c+", "pattern": "self\\.__fuel_reserve"},
+                    {"typ": "c+", "pattern": "self\\.__astronauts"},
+                    {"typ": "c+", "pattern": "def get_fuel_mass"},
+                    {"typ": "c+", "pattern": "def set_fuel_mass"},
+                    {"typ": "c+", "pattern": "def _get_oxygen_mass"},
+                    {"typ": "c+", "pattern": "def _set_oxygen_mass"},
+                    {"typ": "c+", "pattern": "def get_passenger_capacity"},
+                    {"typ": "c-", "pattern": "def _?_?set_passenger_capacity"},
+                    {"typ": "c-", "pattern": "def _?_?[gs]et_fuel_reserve"},
+                    {"typ": "c-", "pattern": "def _?_?[gs]et_astronauts"}
+                ]}
+			]
+        }
+    ]
+}
