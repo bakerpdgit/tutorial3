@@ -46,6 +46,11 @@
           "id": "ENCAP",
           "name": "Encapsulation",
           "bookLink": "./encapsulation/book.json"
+    },
+    {
+      "id": "SSQ",
+      "name": "Static Stacks and Queues",
+      "bookLink": "./static_stacks_and_queues/book.json"
     }
   ]
 }
