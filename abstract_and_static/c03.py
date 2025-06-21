@@ -3,80 +3,77 @@ from functools import partial
 
 
 class Skins:
-  '''Class to store player skins and demonstrate static attributes'''
+    '''Class to store player skins and demonstrate static attributes'''
 
-  # Static attributes
-  SKIN0 = "(^ω^)"
-  SKIN1 = "(●´ω｀●)"
-  SKIN2 = "ᕦ(ò_óˇ)ᕤ"
+    # Static attributes
+    SKIN0: str = "(^ω^)"
+    SKIN1: str = "(●´ω｀●)"
+    SKIN2: str = "ᕦ(ò_óˇ)ᕤ"
 
-  @staticmethod
-  def get_skin_names():  # STATIC METHOD to get all skin names
-    return [attr for attr in dir(Skins) if not callable(getattr(Skins, attr)) and not attr.startswith("__")]
+    @staticmethod
+    def get_skin_names() -> list[str]:  # STATIC METHOD to get all skin names
+        return [attr for attr in dir(Skins) if not callable(getattr(Skins, attr)) and not attr.startswith("__")]
 
-  @staticmethod
-  def get_skin_values():  # STATIC METHOD to get all skin values - lookup partial if interested!
-    return list(map(partial(getattr, Skins), Skins.get_skin_names()))
+    @staticmethod
+    def get_skin_values() -> list[str]:  # STATIC METHOD to get all skin values - lookup partial if interested!
+        return list(map(partial(getattr, Skins), Skins.get_skin_names()))
 
 
 class Player(ABC):
-  '''Player class (abstract class)'''
+    '''Player class (abstract class)'''
 
-  def __init__(self):  # Constructor
-    super().__init__()
-    self._skin = Skins.SKIN0
-    self._position = [0, 0]
+    def __init__(self) -> None:  # Constructor
+        super().__init__()
+        self._skin: str = Skins.SKIN0
+        self._position: tuple[float, float] = (0, 0)
 
-  def upgrade_skin(self, skin):
-    self._skin = skin
+    def upgrade_skin(self, skin: str):
+        self._skin = skin
 
-  @property
-  def position(self):
-    return self._position
+    @property
+    def position(self) -> tuple[float, float]:
+        return self._position
 
-  @abstractmethod
-  def attack(self):
-    pass
+    @abstractmethod
+    def attack(self) -> None:
+        pass
 
-  def move(self):
-    self._position[0] += 1
-    self._position[1] += 1
+    def move(self) -> None:
+        self._position = (self._position[0] + 1, self._position[1] + 1)
 
-  def __repr__(self):  # Printing method
-    return f"{self._skin} is at position {self._position}"
+    def __repr__(self) -> str:  # Printing method
+        return f"{self._skin} is at position {self._position}"
 
 
 class Warrior(Player):
-  '''Warrior class inherits from Player class'''
+    '''Warrior class inherits from Player class'''
 
-  def __init__(self):  # Constructor
-    super().__init__()
+    def __init__(self) -> None:  # Constructor
+        super().__init__()
 
-  def move(self):  # Override virtual method
-    self._position[0] += 2
-    self._position[1] += 2
+    def move(self) -> None:  # Override virtual method
+        self._position = (self._position[0] + 2, self._position[1] + 2)
 
-  def attack(self):  # Override the abstract method
-    print("Warrior is attacking with a sword.")
+    def attack(self) -> None:  # Override the abstract method
+        print("Warrior is attacking with a sword.")
 
 
 class Mage(Player):
-  '''Mage class inherits from Player class'''
+    '''Mage class inherits from Player class'''
 
-  def __init__(self):  # Constructor
-    super().__init__()
+    def __init__(self) -> None:  # Constructor
+        super().__init__()
 
-  def move(self):  # Override virtual method
-    self._position[0] += 0.5
-    self._position[1] += 0.5
+    def move(self) -> None:  # Override virtual method
+        self._position = (self._position[0] + 0.5, self._position[1] + 0.5)
 
-  def attack(self):  # Override the abstract method
-    print("Mage is casting a fireball.")
+    def attack(self) -> None:  # Override the abstract method
+        print("Mage is casting a fireball.")
 
 
 # Create instances of the classes
-warrior = Warrior()
-mage = Mage()
+warrior: Warrior = Warrior()
+mage: Mage = Mage()
 
 # Change skins
 warrior.upgrade_skin(Skins.SKIN1)  # Access static attributes to set skin
