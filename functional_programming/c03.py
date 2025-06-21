@@ -1,8 +1,8 @@
-def make_uppercase(string):
+def make_uppercase(string: str) -> str:
     return string.upper()
 
 
-animal_names = ["monkey", "dog", "fish", "bird", "leopard", "zebra"]
+animal_names: list[str] = ["monkey", "dog", "fish", "bird", "leopard", "zebra"]
 
 # No conversion required
 for name in map(make_uppercase, animal_names):
