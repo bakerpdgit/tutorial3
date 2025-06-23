@@ -67,7 +67,7 @@ def main():
     """
         Function to run to play a game of tic tac toe
     """
-    # initialise board state
+    # initialise board state - this syntax will be explained in the second chapter
     board = BoardState([[" " for _ in range(3)] for _ in range(3)], Player.PLAYER1)
 
     # game loop
