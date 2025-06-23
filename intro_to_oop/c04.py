@@ -22,7 +22,7 @@ class Board:
             print("|".join(row))
             print("-" * 5)
 
-    def is_winner(self) -> bool:
+    def is_turn_winner(self) -> bool:
         """
             Function to check if the player to play won on a given board
         """
@@ -49,44 +49,44 @@ class Board:
         """
         return all(cell != " " for row in self.grid for cell in row)
 
-    def make_move(row: int, col: int) -> bool:
+    def make_move(self, row: int, col: int) -> bool:
         """
             Function to attempt to make a move for the player
             Returns true if the cell specified is empty, false otherwise
         """
-        if board.grid[row][col] == " ":
+        if self.grid[row][col] == " ":
             # enum.value gets the value of the named constant
-            board.grid[row][col] = board.turn.value
+            self.grid[row][col] = self.turn.value
             return True
         return False
 
-    def board_update_turn(board: BoardState) -> None:
-        board.turn = Player.PLAYER2 if board.turn == Player.PLAYER1 else Player.PLAYER1
+    def update_turn(self) -> None:
+        self.turn = Player.PLAYER2 if self.turn == Player.PLAYER1 else Player.PLAYER1
 
 def main(): 
     """
         Function to run to play a game of tic tac toe
     """
     # initialise board state - this syntax will be explained in the second chapter
-    board = BoardState([[" " for _ in range(3)] for _ in range(3)], Player.PLAYER1)
+    board = Board([[" " for _ in range(3)] for _ in range(3)], Player.PLAYER1)
 
     # game loop
     while True:
-        print_board(board)
+        board.print()
         row = int(input("Enter row (0-2):"))
         col = int(input("Enter col (0-2):"))
-        if not board_make_move(board, row, col):
+        if not board.make_move(row, col):
             print("Invalid move. Try again.")
             continue
-        if board_is_winner(board):
-            print_board(board)
+        if board.is_turn_winner():
+            board.print()
             print(f"Player {board.turn.value} wins!")
             break
-        if is_board_full(board):
-            print_board(board)
+        if board.is_full():
+            board.print()
             print("It's a draw!")
             break
-        board_update_turn(board)
+        board.update_turn()
 
 main()
 
