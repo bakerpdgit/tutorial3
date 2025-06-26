@@ -1,5 +1,7 @@
 class BankAccount:
-    '''Class for a bank account'''
+    """
+        Class for a bank account, contains an account number and a balance
+    """
 
     def __init__(self, account_number: str, balance:float=0) -> None:  # Constructor
         self.__account_number: str = account_number
@@ -24,8 +26,7 @@ class BankAccount:
         else:
             raise ValueError("Balance cannot be negative")
 
-    # Method used to show specific message whenever the class object is printed.
-    # If this is not included, printing the class will show <__main__.BankAccount object at some address>
+    # string representation of the bank account 
     def __repr__(self) -> str:
         return f"Account Number: {self.__account_number}\nBalance: {self.__balance}"
 
@@ -53,5 +54,4 @@ try:
 except Exception as err:
     print(f"Error caught: {err}")
 
-# WHENEVER you call print(object), the string returned from __repr__ is printed
 print(account)  # print details still shows old balance

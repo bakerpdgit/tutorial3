@@ -1,62 +1,59 @@
-class Pet:
-    '''Pet class as a base class'''
+class Dog:
+    """
+        Dog class, contains age, name and microchip id
+    """
 
-    def __init__(self, name: str, age: int) -> None:
-        self._age: int = ______  # age (protected)
-        self._name: str = ______  # name (protected)
+    # constructor
+    def __init__(self, name: str, age: int, microchip_id: str):
+        self.__age : int = _______ # private attribute for age
+        self._______: str = _______ # private attribute for name
+        self.__microchip_id: str = _______  # private attribute for microchip id
 
     '''GETTERS'''
 
     @property
-    def age(self) -> int:  # Getter for age
+    def age(self) -> int: # getter for age
         return ________
 
-    @property
-    def name(self) -> str:  # Getter for name
-        return _______
+    @________
+    def name(self) -> str: # getter for name
+        return self.__name
+
+    @________
+    def microchip_id(self) -> str: # getter for microchip id
+        return self.__microchip_id 
 
     '''SETTERS'''
 
     @age.setter
     def age(self, value: int) -> None:  # Setter for age with validation
         if value >= 0:
-            _______ = value
+            self.________ = value
         else:
             raise ValueError("Age cannot be negative")
 
-    @name.setter
+    @name._______
     def name(self, value: str) -> None:  # Setter for name with validation
         if len(value) > 0 and value.isalpha():
-            ________ = value
+            self.________ = value
         else:
             raise ValueError(
                 "Name cannot be empty or contain non-alphabetic characters")
 
+    @_____________._______
+    def microchip_id(self, value: str) -> None: # Setter for microchip id
+        self.___________ = value
 
-class Dog(Pet):
-    '''Dog class inherits from Pet class'''
-
-    def __init__(self, name: str, age: int, microchip_id: str):
-        super().__init__(name, age)  # Call the Pet class constructor
-        self.__microchip_id: str = _________  # Additional attribute for Dog
-
-    @___________
-    def microchip_id(self) -> str:
-        return _____________
-
-    @___________.______
-    def microchip_id(self, value: str) -> None:
-        _____________ = value
-
-
+# make new dog
 my_dog: Dog = Dog("Panda", 7, "012345678901234")
 
 # get attributes
-print(my_dog.name, my_dog.___, my_dog.microchip_id)
+print(my_dog.name, my_dog.________, my_dog.microchip_id)
 
 my_dog.age += 1  # increase age
 my_dog.name = "Pandu"  # change name
-my_dog.microchip_id = "987654321098765"  # change microchip id
+my_dog.____________ = "987654321098765"  # change microchip id
 
 # get updated attributes
-print(my_dog.name, my_dog.age, my_dog.____________)
+print(my_dog.__________, my_dog.age, my_dog.microchip_id)
+
