@@ -14,19 +14,19 @@ class Rectangle:
 
     @property
     def length(self) -> float:
-        return self.__length
+        return ____________
 
     @property
     def width(self) -> float:
-        return self.__width
+        return ___________
 
     '''AREA AND PERIMETER'''
 
-    def area(self) -> float:
-        return self.__length * self.__width
+    def area(self) -> float: # a polymorphic method
+        return self.__length * _______
 
-    def perimeter(self) -> float:
-        return 2 * (self.__length + self.__width)
+    def perimeter(self) -> float: # a polymorphic method
+        return 2 * (________ + ________)
 
     '''SPECIAL METHODS'''
 
@@ -35,9 +35,10 @@ class Rectangle:
         return f"Rectangle(length={self.__length}, width={self.__width})"
 
     # equality operator method
+    # we must first check if the object is a rectangle, then we check if their attributes are the same in any order
     def __eq__(self, other: object) -> bool:
         return isinstance(other, Rectangle) and  \
-                sorted([self.__length, self.__width]) == sorted([other.length, other.width])
+                sorted([________, _______]) == sorted([_______, ________])
 
 
 class Circle:
@@ -46,31 +47,31 @@ class Circle:
         A circle is minimally defined using its radius
     """
     def __init__(self, radius: float) -> None:
-        self.__radius = radius
+        self.__radius = _______
 
     '''GETTERS'''
 
     @property
     def radius(self) -> float:
-        return self.__radius
+        return _______
 
     '''AREA AND PERIMETER'''
 
-    def area(self) -> float:
-        return pi * self.__radius * self.__radius
+    def area(self) -> float: # a polymorphic method
+        return pi * _______ * _______
 
-    def perimeter(self) -> float:
-        return 2 * pi * self.__radius
+    def perimeter(self) -> float: # a polymorphic method
+        return 2 * ______ * ________
 
     '''SPECIAL METHODS'''
 
     # string representation method
-    def __repr__(self) -> str:
+    def ___________(self) -> str:
         return f"Circle(radius={self.__radius}"
 
     # equality operator method
-    def __eq__(self, other: object) -> bool:
-        return isinstance(other, Circle) and self.__radius == other.radius
+    def ___________(self, other: object) -> bool:
+        return isinstance(other, Circle) and ___________ == __________
 
 
 # using polymorphism to get the area and perimeter of each shape
