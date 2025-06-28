@@ -1,49 +1,54 @@
-from math import pi
-from abc import ABC
+class Vehicle:
+    def __init__(self, make: str, model: str, year: int):
+        self._make: str = make
+        self._model: str = model
+        self._year : int = year
+
+    def description(self):
+        return f"{self._year} {self._make} {self._model}"
 
 
-# An abstract base class
-class Shape(ABC):
+class Car(Vehicle):
+    def __init__(self, make, model, year, fuel_type):
+    _________.__init__(make, model, year)
+    self.fuel_type = fuel_type
 
-    def __init__(self) -> None:
-        pass
-
-    def area(self) -> float:
-        # NOTE: This is a placeholder (abstract) method that will be overridden by subclasses
-        # This makes Shape an abstract class because it has an abstract method and so should not be used directly
-        return 0
+def description(self):  # add fuel type to the parent class's description
+    return super()._________ + f", Fuel Type: {self.fuel_type}"
 
 
-class Rectangle(______):
-    def __init__(self, length: int, width: int) -> None:
-        _____().__init__()
-        self.length: int = length
-        self.width: int = width
+class ElectricCar(________):
+    def __init__(self, make, model, year, battery_capacity):
+    __________.__init__(make, model, year, fuel_type="Electric")
+    self._______________ = battery_capacity
 
-    def area(self) -> float:
-        return _______ * _______
-
-
-class Circle(_____):
-    def __init__(self, radius: int) -> None:
-        super().________
-        self.radius: int = radius
-
-    def ____(self) -> float:
-        return pi * _________ ** 2
+def description(self):  # add battery capacity to parent class's description
+    return ________.description() + f", Battery Capacity: {self.battery_capacity} kWh"
 
 
-class Triangle(_____):
-    def __init__(self, base: int, height: int) -> None:
-        _____().__init__()
-        self.base: int = base
-        self.height: int = height
+class Bicycle(_________):
+    def __init__(self, make, model, year, gear_count):
+    super().__init__(make, model, year)
+    self.gear_count = __________
 
-    def area(self) -> float:
-        return 0.5 * ________ * _________
+def description(self):
+    return super().description() + f", Gear Count: {self.gear_count}"
+
+def ring_bell(self):  # unique method of bicycle
+    return "Ring ring!"
 
 
-shapes: list[Shape] = [Rectangle(4, 5), Circle(3), Triangle(6, 8)]
+# Create instances of each class
+vehicle = Vehicle("GenericMake", "GenericModel", 2020)
+car = Car("Toyota", "Corolla", 2021, "Gasoline")
+electric_car = ElectricCar("Tesla", "Model 3", 2022, 75)
+bicycle = Bicycle("Giant", "Escape 3", 2023, 21)
 
-for shape in _______:
-    print("Area of shape:", shape.______())
+# Basic description of each vehicle
+print(vehicle.description())
+print(car.description())
+print(electric_car.description())
+print(bicycle.description())
+
+# Test unique method of Bicycle
+print(bicycle._________())

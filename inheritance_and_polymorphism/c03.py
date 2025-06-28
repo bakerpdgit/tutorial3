@@ -3,14 +3,14 @@ class Animal:
         Superclass for all the animals
     """
     def __init__(self, name: str) -> None:
-        self._name = name
+        self._name = name # protected attribute
 
     @property
     def name(self) -> str:
         return self._name
 
-    # for us to use the Animal type annotation for all the subclasses, we must define the speak() method
-    # this is a virtual method - it can be overrided later by subclasses
+    # to use the Animal type annotation for all subclasses, we must define the speak() method
+    # virtual method
     def speak(self) -> None:
         pass
 
@@ -20,9 +20,9 @@ class Dog(Animal):
         Dog has a speak() method
     """
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        super().__init__(name) # superconstructor
 
-    def speak(self) -> None:
+    def speak(self) -> None: # method overriding
         print("Woof!")
 
 class Cat(Animal):
@@ -30,9 +30,9 @@ class Cat(Animal):
         Cat has a speak() method
     """
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        super().__init__(name) # superconstructor
     
-    def speak(self) -> None:
+    def speak(self) -> None: # method overriding
         print("Meow")
 
 class Horse(Animal):
@@ -40,9 +40,9 @@ class Horse(Animal):
         Horse has a speak() method
     """
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        super().__init__(name) # superconstructor
 
-    def speak(self) -> None:
+    def speak(self) -> None: # method overriding
         print("Neigh")
 
 # this will work because Dog, Cat, horse all have a speak() method
