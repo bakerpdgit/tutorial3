@@ -29,6 +29,25 @@
             "tests": [
                 {
                     "in": [],
+                    "out": "(0, 0)\nAlice is moving\nAlice is attacking\n(1, -1) Alice ._."
+                }
+            ]
+        },
+        {
+            "id": "minherandabstract04",
+            "name": "Ex. 4 (example)"
+            "guide": "./c04.md"
+            "py": "./c04.py",
+            "isExample": "True"
+        },
+        {
+            "id": "minherandabstract05",
+            "name": "Ex. 5 (task)",
+            "guide": "./c05.md",
+            "py": "./c05.py",
+            "tests": [
+                {
+                    "in": [],
                     "out": ""
                 }
             ]
