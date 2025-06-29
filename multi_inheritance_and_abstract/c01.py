@@ -1,6 +1,6 @@
 class PrintableMixin:
     """
-        String represetnation behaviour
+        String representation behaviour
     """
     # readable string representation
     def __repr__(self) -> str:

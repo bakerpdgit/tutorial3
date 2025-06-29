@@ -17,7 +17,19 @@
             "tests": [
                 {
                     "in": [],
-                    "out": "Rectangle(length=4, width=5) 20 18\nCircle(radius=3 28.274333882308138 18.84955592153876\nTrue\nTrue\nFalse\nFalse\nTrue\nFalse"
+                    "out": "Alice is moving\nAlice is attacking\nAlice ._.\nMovingAttackingCharacter: {'_name': 'Alice', '_skin': '._.'}\n(<class '__main__.MovingAttackingCharacter'>, <class '__main__.MovableCharacter'>, <class '__main__.AttackingCharacter'>, <class '__main__.Character'>, <class '__main__.PrintableMixin'>, <class 'object'>)"
+                }
+            ]
+        },
+        {
+            "id": "minherandabstract03",
+            "name": "Ex. 3 (task)"
+            "guide": "./c03.md"
+            "py": "./c03.py",
+            "tests": [
+                {
+                    "in": [],
+                    "out": ""
                 }
             ]
         }
