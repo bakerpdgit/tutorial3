@@ -1,53 +1,52 @@
-class Animal:
+class User:
     """
-        Superclass for all the animals
+        Class for a user that has a username and email
     """
-    def __init__(self, name: str) -> None:
-        self._name = name # protected attribute
+    def __init__(self, username: str, email: str):
+        self._username: str = username # protected attribute
+        self._email: str = email # protected attribute
 
     @property
-    def name(self) -> str:
-        return self._name
+    def username(self):
+        return self._username
 
-    # to use the Animal type annotation for all subclasses, we must define the speak() method
-    # virtual method
-    def speak(self) -> None:
-        pass
+    @property
+    def email(self):
+        return self._email
 
+    def view_dashboard(self):
+        print("viewing dashboard")
 
-class Dog(Animal):
+    def __repr__(self):
+        return f"User({self._username})"
+
+class Moderator(User):
     """
-        Dog has a speak() method
+        Moderator can ban users
     """
-    def __init__(self, name: str) -> None:
-        super().__init__(name) # superconstructor
+    def __init__(self, username: str, email: str):
+        super().__init__(username, email)
 
-    def speak(self) -> None: # method overriding
-        print("Woof!")
+    def ban_user(self, user: User):
+        print(f"banned {user}")
 
-class Cat(Animal):
+class Admin(Moderator):
     """
-        Cat has a speak() method
+        Admin can ban and delete users
     """
-    def __init__(self, name: str) -> None:
-        super().__init__(name) # superconstructor
-    
-    def speak(self) -> None: # method overriding
-        print("Meow")
+    def delete_user(self, user: User):
+        print(f"deleted {user}")
 
-class Horse(Animal):
-    """
-        Horse has a speak() method
-    """
-    def __init__(self, name: str) -> None:
-        super().__init__(name) # superconstructor
+# make new user, moderator and admin
+user = User("johndoe", "john@example.com")
+mod = Moderator("mod_jane", "jane@example.com")
+admin = Admin("admin_bob", "bob@example.com")
 
-    def speak(self) -> None: # method overriding
-        print("Neigh")
-
-# this will work because Dog, Cat, horse all have a speak() method
-# this is an example of polymorphism
-animals : list[Animal] = [Dog("dog"), Cat("cat"), Horse("horse")]
-for animal in animals:
-    animal.speak()
+# methods are inherited
+user.view_dashboard()
+mod.view_dashboard()
+mod.ban_user(user)
+admin.view_dashboard()
+admin.ban_user(user)
+admin.delete_user(user)
 

@@ -1,54 +1,56 @@
-class Vehicle:
-    def __init__(self, make: str, model: str, year: int):
-        self._make: str = make
-        self._model: str = model
-        self._year : int = year
+class Animal:
+    """
+        Superclass for all the animals
+    """
+    def __init__(self, name: str) -> None:
+        self._name = name # protected attribute
 
-    def description(self):
-        return f"{self._year} {self._make} {self._model}"
+    @property
+    def name(self) -> str:
+        return self._name
 
-
-class Car(Vehicle):
-    def __init__(self, make, model, year, fuel_type):
-    _________.__init__(make, model, year)
-    self.fuel_type = fuel_type
-
-def description(self):  # add fuel type to the parent class's description
-    return super()._________ + f", Fuel Type: {self.fuel_type}"
+    # to use the Animal type annotation for all subclasses, we must define the speak() method
+    # virtual method
+    def speak(self) -> None:
+        pass
 
 
-class ElectricCar(________):
-    def __init__(self, make, model, year, battery_capacity):
-    __________.__init__(make, model, year, fuel_type="Electric")
-    self._______________ = battery_capacity
+class Dog(Animal):
+    """
+        Dog has a speak() method
+    """
+    def __init__(self, name: str) -> None:
+        super().__init__(name) # superconstructor
 
-def description(self):  # add battery capacity to parent class's description
-    return ________.description() + f", Battery Capacity: {self.battery_capacity} kWh"
+    def speak(self) -> None: # method overriding
+        print("Woof!")
 
+class Cat(Animal):
+    """
+        Cat has a speak() method
+    """
+    def __init__(self, name: str) -> None:
+        super().__init__(name) # superconstructor
+    
+    def speak(self) -> None: # method overriding
+        print("Meow")
 
-class Bicycle(_________):
-    def __init__(self, make, model, year, gear_count):
-    super().__init__(make, model, year)
-    self.gear_count = __________
+class Horse(Animal):
+    """
+        Horse has a speak() method
+    """
+    def __init__(self, name: str) -> None:
+        super().__init__(name) # superconstructor
 
-def description(self):
-    return super().description() + f", Gear Count: {self.gear_count}"
+    def speak(self) -> None: # method overriding
+        print("Neigh")
 
-def ring_bell(self):  # unique method of bicycle
-    return "Ring ring!"
+    def dosomething(self) -> None:
+        print("hey hey hey")
 
+# this will work because Dog, Cat, horse all have a speak() method
+# this is an example of polymorphism
+animals : list[Animal] = [Dog("dog"), Cat("cat"), Horse("horse")]
+for animal in animals:
+    animal.speak()
 
-# Create instances of each class
-vehicle = Vehicle("GenericMake", "GenericModel", 2020)
-car = Car("Toyota", "Corolla", 2021, "Gasoline")
-electric_car = ElectricCar("Tesla", "Model 3", 2022, 75)
-bicycle = Bicycle("Giant", "Escape 3", 2023, 21)
-
-# Basic description of each vehicle
-print(vehicle.description())
-print(car.description())
-print(electric_car.description())
-print(bicycle.description())
-
-# Test unique method of Bicycle
-print(bicycle._________())
