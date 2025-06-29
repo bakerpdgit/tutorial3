@@ -43,7 +43,7 @@
             "tests": [
                 {
                     "in": [],
-                    "out": "Area of shape: 20\nArea of shape: 28.274333882308138\nArea of shape: 24.0"
+                    "out": "2020 GenericMake GenericModel\n2021 Toyota Corolla, Fuel Type: Gasoline\n2022 Tesla Model 3, Fuel Type: Electric, Battery Capacity: 75 kWh\n2023 Giant Escape 3, Gear Count: 21\nRing ring!"
                 }
             ]
         }

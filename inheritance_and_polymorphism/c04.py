@@ -9,8 +9,9 @@ class Animal:
     def name(self) -> str:
         return self._name
 
-    # to use the Animal type annotation for all subclasses, we must define the speak() method
-    # virtual method
+    # to use the type annotations, we must define the speak() method here
+    # it will still run without, but it is best to define it
+    # this is a virtual method
     def speak(self) -> None:
         pass
 
