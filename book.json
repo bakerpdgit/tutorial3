@@ -23,6 +23,11 @@
             "bookLink": "./inheritance_and_polymorphism/book.json"
         },
         {
+            "id": "MINHERANDABSTRACT",
+            "name": "Multi-Inheritance and Abstract Classes"
+            "bookLink": "./multi_inheritance_and_abstract/book.json"
+        },
+        {
             "id": "ABSTRACTANDSTATIC",
             "name": "Abstract and Static Methods",
             "bookLink": "./abstract_and_static/book.json"
