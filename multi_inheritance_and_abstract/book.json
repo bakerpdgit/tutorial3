@@ -1,0 +1,56 @@
+{
+    "name": "Multi-Inheritance and Abstract Classes"
+    "id": "minherandabstract",
+    "children": [
+        {
+            "id": "minherandabstract01",
+            "name": "Ex. 1 (example)",
+            "guide": "./c01.md",
+            "py": "./c01.py",
+            "isExample": "True"
+        },
+        {
+            "id": "minherandabstract02",
+            "name": "Ex. 2 (task)",
+            "guide": "./c02.md",
+            "py": "./c02.py",
+            "tests": [
+                {
+                    "in": [],
+                    "out": "Alice is moving\nAlice is attacking\nAlice ._.\nMovingAttackingCharacter: {'_name': 'Alice', '_skin': '._.'}\n(<class '__main__.MovingAttackingCharacter'>, <class '__main__.MovableCharacter'>, <class '__main__.AttackingCharacter'>, <class '__main__.Character'>, <class '__main__.PrintableMixin'>, <class 'object'>)"
+                }
+            ]
+        },
+        {
+            "id": "minherandabstract03",
+            "name": "Ex. 3 (task)"
+            "guide": "./c03.md"
+            "py": "./c03.py",
+            "tests": [
+                {
+                    "in": [],
+                    "out": "(0, 0)\nAlice is moving\nAlice is attacking\n(1, -1) Alice ._."
+                }
+            ]
+        },
+        {
+            "id": "minherandabstract04",
+            "name": "Ex. 4 (example)"
+            "guide": "./c04.md"
+            "py": "./c04.py",
+            "isExample": "True"
+        },
+        {
+            "id": "minherandabstract05",
+            "name": "Ex. 5 (task)",
+            "guide": "./c05.md",
+            "py": "./c05.py",
+            "tests": [
+                {
+                    "in": [],
+                    "out": "hello world\n['saved an item']"
+                }
+            ]
+        }
+    ]
+}

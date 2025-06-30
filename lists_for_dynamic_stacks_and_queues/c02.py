@@ -1,11 +1,13 @@
+from typing import Any
+
 class Stack:
     def __init__(self):
-        self._items = []
+        self._items: list[Any] = []
     
-    def is_empty(self):
+    def is_empty(self) -> bool:
         return self._items == []
     
-    def peek(self):
+    def peek(self) -> Any:
         return self._items[-1]
 
     # ==> add the two essential stack methods from the last example below

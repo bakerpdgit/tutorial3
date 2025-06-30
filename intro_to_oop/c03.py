@@ -1,50 +1,92 @@
 from dataclasses import dataclass
+from enum import Enum
 
+# An enum is a group of named constants
+class Player(Enum):
+    BLANK = " "
+    PLAYER1 = "x"
+    PLAYER2 = "o"
 
-# Dataclass with separate function for behaviour
+# Board state record implemented as a dataclass
 @dataclass
-class Person:
-  forename: str
-  surname: str
-  children: 'list[Person]'
+class BoardState:
+    grid: list[list[str]]
+    turn: Player
 
+# Board related functions - it is now clear that they all require the board state
+def print_board(board : BoardState) -> None:
+    """
+        Function to print the board
+    """
+    for row in board.grid:
+        print("|".join(row))
+        print("-" * 5)
 
-# Note there is no obvious link to the Person class until you read the function body
-def create_child(parent, forename):
-  parent.children.append(Person(forename, parent.surname, []))
+def board_is_winner(board: BoardState) -> bool:
+    """
+        Function to check if the player to play won on a given board
+    """
+    # row checks
+    for row in board.grid:
+        if all(cell == board.turn.value for cell in row):
+            return True
+    # column checks
+    for col in range(3):
+        if all(board.grid[row][col] == board.turn.value for row in range(3)):
+            return True
+    # leading diagonal check
+    if all(board.grid[i][i] == board.turn.value for i in range(3)):
+        return True
+    # other diagonal check
+    if all(board.grid[i][2-i] == board.turn.value for i in range(3)):
+        return True
+    # nothing found
+    return False
+    
+def is_board_full(board: BoardState) -> bool:
+    """
+        Returns true if the board is full, false otherwise
+    """
+    return all(cell != " " for row in board.grid for cell in row)
 
+def board_make_move(board : BoardState, row: int, col: int) -> bool:
+    """
+        Function to attempt to make a move for the player
+        Returns true if the cell specified is empty, false otherwise
+    """
+    if board.grid[row][col] == " ":
+        # enum.value gets the value of the named constant
+        board.grid[row][col] = board.turn.value
+        return True
+    return False
 
-# We customarily use a capital letter for a class name and a lowercase letter for a regular object
-henry = Person("Henry", "Tudor", [])
-# Potentially confusing syntax
-create_child(henry, "Mary")
-create_child(henry, "Elizabeth")
-create_child(henry, "Edward")
+def board_update_turn(board: BoardState) -> None:
+    board.turn = Player.PLAYER2 if board.turn == Player.PLAYER1 else Player.PLAYER1
 
+def main(): 
+    """
+        Function to run to play a game of tic tac toe
+    """
+    # initialise board state - this syntax will be explained in the second chapter
+    board = BoardState([[" " for _ in range(3)] for _ in range(3)], Player.PLAYER1)
 
-# Alternative Dataclass showing a contained function for behaviour
-@dataclass
-class Person:
-  forename: str
-  surname: str
-  children: 'list[Person]'
+    # game loop
+    while True:
+        print_board(board)
+        row = int(input("Enter row (0-2):"))
+        col = int(input("Enter col (0-2):"))
+        if not board_make_move(board, row, col):
+            print("Invalid move. Try again.")
+            continue
+        if board_is_winner(board):
+            print_board(board)
+            print(f"Player {board.turn.value} wins!")
+            break
+        if is_board_full(board):
+            print_board(board)
+            print("It's a draw!")
+            break
+        board_update_turn(board)
 
-  # Function is defined in class body so clearly related. We call such a function a method.
-  # The first parameter is customarily called self, as it refers to the object from which the method is called, which
-  # in a sense "owns" the method
-  def create_child(self, forename):
-    self.children.append(Person(forename, self.surname, []))
+main()
 
-
-henry = Person("Henry", "Tudor", [])
-# Access the function as a property of the class with a dot.
-Person.create_child(henry, "Mary")
-
-# But here is a more convenient syntax. Here we need not even refer to Person directly,
-# only to its instance henry which is implictly passed as the first argument of the method
-# and so becomes the value of the self parameter.
-# This is the usual syntax for invoking methods.
-henry.create_child("Elizabeth")
-henry.create_child("Edward")
-
-print(henry)

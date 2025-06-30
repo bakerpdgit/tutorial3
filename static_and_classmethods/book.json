@@ -1,0 +1,32 @@
+{
+    "name": "Static and Classmethods",
+    "id": "statandclass",
+    "children": [
+        {
+            "id": "statandclass01",
+            "name": "Ex. 1 (example)",
+            "guide": "./c01.md",
+            "py": "./c01.py",
+            "isExample": "True"
+        },
+        {
+            "id": "statandclass02",
+            "name": "Ex. 2 (task)",
+            "guide": "./c02.md",
+            "py": "./c02.py",
+            "tests": [
+                {
+                    "in": [],
+                    "out": "Creating product 'Laptop'.\nCreating product 'Smartphone'.\nProduct 'Laptop' already exists.\nProduct(name=Smartphone, price=800)\nProduct(name=Laptop, price=1500)"
+                }
+            ]
+        },
+        {
+            "id": "statandclass03",
+            "name": "Ex. 3 (example)",
+            "guide": "./c03.md",
+            "py": "./c03.py",
+            "isExample": "True"
+        }
+    ]
+}

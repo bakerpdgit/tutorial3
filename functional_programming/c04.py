@@ -1,6 +1,7 @@
 from functools import reduce
 
 
+# we will not give type annotations for these as it is a bit more complicated
 def add(a, b):
     return a + b
 

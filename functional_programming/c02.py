@@ -1,17 +1,21 @@
-def create_printer(string):
-    def printer():
+from typing import Callable
+
+def create_printer(string: str) -> Callable[[], None]:
+    def printer() -> None:
         print(string)
 
     return printer
 
-
-def get_function_name(func):
+# Callable[..., object] is the type annotation for any function
+# because basically all functions have a qualname
+def get_function_name(func: Callable[..., object] ) -> str:
     return func.__qualname__
 
 
-functions = [int, print, len]
-option = int(input("Enter the number of a function to use: ")) - 1
+functions: list[Callable[..., object]] = [int, print, len]
+option: int = int(input("Enter the number of a function to use: ")) - 1
 
-___ = functions[option]
-name = ___(func)
+___: Callable[..., object] = functions[option]
+name: str = ___(func)
 create_printer(___)__
+

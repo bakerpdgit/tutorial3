@@ -1,54 +1,88 @@
-class Vehicle:
-  def __init__(self, make, model, year):
-    self.make = _____
-    self.____ = model
-    self.year = ______
-
-  def description(self):
-    return f"{self.year} {self.make} {self.model}"
+from math import pi
 
 
-class Car(________):
-  def __init__(self, make, model, year, fuel_type):
-    _________.__init__(make, model, year)
-    self.fuel_type = fuel_type
+class Rectangle:
+    """
+        Class for a rectangle
+        A rectangle is minimally defined using its length and width
+    """
+    def __init__(self, length: float, width: float) -> None:
+        self.__length = length
+        self.__width = width
 
-  def description(self):  # add fuel type to the parent class's description
-    return super()._________ + f", Fuel Type: {self.fuel_type}"
+    '''GETTERS'''
+
+    @property
+    def length(self) -> float:
+        return ____________
+
+    @property
+    def width(self) -> float:
+        return ___________
+
+    '''AREA AND PERIMETER'''
+
+    def area(self) -> float: # a polymorphic method
+        return self.__length * _______
+
+    def perimeter(self) -> float: # a polymorphic method
+        return 2 * (________ + ________)
+
+    '''SPECIAL METHODS'''
+
+    # string representation method
+    def __repr__(self) -> str:
+        return f"Rectangle(length={self.__length}, width={self.__width})"
+
+    # equality operator method
+    # we must first check if the object is a rectangle, then we check if their attributes are the same in any order
+    def __eq__(self, other: object) -> bool:
+        return isinstance(other, Rectangle) and  \
+                sorted([________, _______]) == sorted([_______, ________])
 
 
-class ElectricCar(________):
-  def __init__(self, make, model, year, battery_capacity):
-    __________.__init__(make, model, year, fuel_type="Electric")
-    self._______________ = battery_capacity
+class Circle:
+    """
+        Class for a circle
+        A circle is minimally defined using its radius
+    """
+    def __init__(self, radius: float) -> None:
+        self.__radius = _______
 
-  def description(self):  # add battery capacity to parent class's description
-    return ________.description() + f", Battery Capacity: {self.battery_capacity} kWh"
+    '''GETTERS'''
+
+    @property
+    def radius(self) -> float:
+        return _______
+
+    '''AREA AND PERIMETER'''
+
+    def area(self) -> float: # a polymorphic method
+        return pi * _______ * _______
+
+    def perimeter(self) -> float: # a polymorphic method
+        return 2 * ______ * ________
+
+    '''SPECIAL METHODS'''
+
+    # string representation method
+    def ___________(self) -> str:
+        return f"Circle(radius={self.__radius}"
+
+    # equality operator method
+    def ___________(self, other: object) -> bool:
+        return isinstance(other, Circle) and ___________ == __________
 
 
-class Bicycle(_________):
-  def __init__(self, make, model, year, gear_count):
-    super().__init__(make, model, year)
-    self.gear_count = __________
+# using polymorphism to get the area and perimeter of each shape
+shapes : list[Rectangle | Circle] = [Rectangle(4, 5), Circle(3)]
+for shape in shapes:
+    print(shape, shape.area(), shape.perimeter())
 
-  def description(self):
-    return super().description() + f", Gear Count: {self.gear_count}"
-
-  def ring_bell(self):  # unique method of bicycle
-    return "Ring ring!"
-
-
-# Create instances of each class
-vehicle = Vehicle("GenericMake", "GenericModel", 2020)
-car = Car("Toyota", "Corolla", 2021, "Gasoline")
-electric_car = ElectricCar("Tesla", "Model 3", 2022, 75)
-bicycle = Bicycle("Giant", "Escape 3", 2023, 21)
-
-# Basic description of each vehicle
-print(vehicle.description())
-print(car.description())
-print(electric_car.description())
-print(bicycle.description())
-
-# Test unique method of Bicycle
-print(bicycle._________())
+# tests for the equality operator
+print(Rectangle(3, 4) == Rectangle(3, 4))
+print(Rectangle(3, 4) == Rectangle(4, 3))
+print(Rectangle(3, 4) == Rectangle(3, 5))
+print(Circle(3) == Rectangle(3, 4))
+print(Circle(4) == Circle(4))
+print(Circle(3) == Circle(5))

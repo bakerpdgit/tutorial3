@@ -1,24 +1,26 @@
+from typing import Any
+
 class HashTable:
 
-    def __init__(self, size):
+    def __init__(self, size: int) -> None:
         
-        self.__size = ______
-        self.__array = [None]*____ 
+        self.__size: int = ______
+        self.__array: list[Any] = [None]*____ 
     
-    def __hash(self, key : str):
+    def __hash(self, key : str) -> int:
         return sum([(_______ + 1) * ord(_______) for index, char in _________(key)]) % ___________
     
-    def lookup(self, key : str):
+    def lookup(self, key : str) -> Any:
         address = self._________(key)
         if (item := self.__array[_________]) is not None:
             return ________
         raise Exception(f"{key} is not in the hash table")
     
-    def insert(self, key : str, value):
+    def insert(self, key : str, value: Any) -> None:
         address = self.__hash(______)
         __________[address] = _________
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self.__array)
 
 my_hash_table = HashTable(20)

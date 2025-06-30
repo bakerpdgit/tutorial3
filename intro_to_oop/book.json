@@ -30,9 +30,16 @@
         },
         {
             "id": "introoop04",
-            "name": "Ex. 4 (task)",
+            "name": "Ex. 4 (example)",
             "guide": "c04.md",
             "py": "c04.py",
+            "isExample": "True"
+        },
+        {
+            "id": "introoop05",
+            "name": "Ex. 5 (task)",
+            "guide": "c05.md",
+            "py": "c05.py",
             "tests": [
                 {
                     "in": [],
