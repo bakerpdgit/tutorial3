@@ -17,7 +17,7 @@
             "tests": [
                 {
                     "in": [],
-                    "out": "Checking out the book.\nReturning the book.\nDisplaying information about the book.\nChecking out the DVD.\nReturning the DVD.\nDisplaying information about the DVD."
+                    "out": "Creating product 'Laptop'.\nCreating product 'Smartphone'.\nProduct 'Laptop' already exists.\nProduct(name=Smartphone, price=800)\nProduct(name=Laptop, price=1500)"
                 }
             ]
         },
@@ -27,18 +27,6 @@
             "guide": "./c03.md",
             "py": "./c03.py",
             "isExample": "True"
-        },
-        {
-            "id": "statandclass04",
-            "name": "Ex. 4 (task)",
-            "guide": "./c04.md",
-            "py": "./c04.py",
-            "tests": [
-                {
-                    "in": [],
-                    "out": "Creating product 'Laptop'.\nCreating product 'Smartphone'.\nProduct 'Laptop' already exists.\nProduct(name=Smartphone, price=800)\nProduct(name=Laptop, price=1500)"
-                }
-            ]
         }
     ]
 }

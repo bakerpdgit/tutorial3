@@ -9,7 +9,7 @@ class Skin(Enum):
 
     # we use a static method as Skin is not instantiated - it is used as a class
     @staticmethod
-    def allowed_skins():
+    def allowed_skins() -> dict[str, str]:
         """
             Method to get a dictionary of allowed skins
         """
