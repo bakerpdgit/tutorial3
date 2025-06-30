@@ -28,7 +28,7 @@
             "bookLink": "./multi_inheritance_and_abstract/book.json"
         },
         {
-            "id": "STATICANDCLASS",
+            "id": "STATANDCLASS",
             "name": "Static and Classmethods",
             "bookLink": "./static_and_classmethods/book.json"
         },
