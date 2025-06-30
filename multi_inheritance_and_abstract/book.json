@@ -48,7 +48,7 @@
             "tests": [
                 {
                     "in": [],
-                    "out": ""
+                    "out": "hello world\n['saved an item']"
                 }
             ]
         }
