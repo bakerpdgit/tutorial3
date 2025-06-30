@@ -28,9 +28,9 @@
             "bookLink": "./multi_inheritance_and_abstract/book.json"
         },
         {
-            "id": "ABSTRACTANDSTATIC",
-            "name": "Abstract and Static Methods",
-            "bookLink": "./abstract_and_static/book.json"
+            "id": "STATICANDCLASS",
+            "name": "Static and Classmethods",
+            "bookLink": "./static_and_classmethods/book.json"
         },
         {
             "id": "LFDSAQ",
