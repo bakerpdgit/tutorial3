@@ -7,7 +7,7 @@ class Rectangle:
     length: int
     width: ___
     # Colour should be a string and default to "black"
-    colour: ___ ___
+    colour: ___ = ___
 
 
 # Create a new rectangle with length 3, width 2, colour black as per default

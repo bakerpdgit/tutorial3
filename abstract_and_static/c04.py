@@ -1,25 +1,19 @@
-# Allowing type annotations to be used before it is fully defined
-# e.g. in this case we can use the type annotation dict[str, Product]
-# within the definition of Product
-from __future__ import annotations
-
-
 class Product:
 
   # A static class attribute to store all products
-  _registry: dict[str, Product] = {}
+  _registry = {}
 
-  def __init__(self, name: str, price: float):
-    self.name: str = name
-    self.price: float = price
+  def __init__(self, name, price):
+    self.name = name
+    self.price = price
     Product._registry[name] = self
 
   # SEE THE DESCRIPTION IN THE EXERCISE FOR WHY @classmethod IS USED HERE
   @classmethod
-  def get_product(cls, name) -> Product:
-    return cls._registry[name]
+  def get_product(cls, name):
+    return cls._registry.get(name)
 
-  def __repr__(self) -> str:
+  def __repr__(self):
     return f"Product(name={self.name}, price={self.price})"
 
 
@@ -27,7 +21,7 @@ class ProductFactory:
 
   # ADD A STATIC METHOD TO THIS FACTORY CLASS THAT CREATES A PRODUCT
   @___________________
-  def create_product(name: str, price: float) -> Product:
+  def create_product(name, price):
     if name in Product._registry:
       print(f"Product '{name}' already exists.")
       return Product.get_product(name)
@@ -37,11 +31,11 @@ class ProductFactory:
 
 
 # Usage
-product1: Product = ProductFactory.create_product("Laptop", 1500)
-product2: Product = ProductFactory.create_product("Smartphone", 800)
+product1 = ProductFactory.create_product("Laptop", 1500)
+product2 = ProductFactory.create_product("Smartphone", 800)
 
 # TRY TO CREATE A PRODUCT THAT ALREADY EXISTS
-product3: Product = ProductFactory.________________("Laptop", 1600)
+product3 = ProductFactory.________________("Laptop", 1600)
 
 print(Product.get_product("Smartphone"))
 print(Product.get_product("Laptop"))

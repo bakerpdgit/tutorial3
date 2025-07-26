@@ -2,6 +2,7 @@ from datetime import date
 from dataclasses import dataclass
 
 # Original shows less readable and maintainable code
+# Don't change this part, scroll down for the OOP version to complete
 
 myCar = {
     "make": "DeLorean",
@@ -42,7 +43,7 @@ class Car:
   lastService: date
 
   def print_car(self):
-    print(f"{self.___} {___} model {___} with registration plate {___}")
+    print(f"{self.colour} {self.make} model {___} with registration plate {___}")
     print(f"Last serviced on {___}")
 
   def service(___):
@@ -55,8 +56,9 @@ class Car:
 # Create a car with the same parameters as in the original
 myCar = _____
 
-# Do the same things here as on lines 27-30, but use method calls with a dot rather than calling the separate functions
+# Do the same things here as on lines 28-31, but use method calls with a
+# dot rather than calling the separate functions
 myCar.print_car()
 ___
 ___
-___
+myCar.print_car()

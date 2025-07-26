@@ -1,45 +1,71 @@
 {
-	"name": "Constructors and Association",
-    "id": "conass",
-    "children": [
+  "name": "Constructors and Association",
+  "id": "conass",
+  "children": [
+    {
+      "id": "conass01",
+      "name": "Ex. 1 (example)",
+      "guide": "./c01.md",
+      "py": "./c01.py",
+      "isExample": "True"
+    },
+    {
+      "id": "conass02",
+      "name": "Ex. 2 (task)",
+      "guide": "c02.md",
+      "py": "c02.py",
+      "typ": "canvas",
+      "tests": [
         {
-            "id": "conass01",
-            "name": "Ex. 1 (example)",
-            "guide": "./c01.md",
-            "py": "./c01.py",
-			"isExample": "True"
-        },
-        {
-            "id": "conass02",
-            "name": "Ex. 2 (task)",
-            "guide": "c02.md",
-            "py": "c02.py",
-            "typ": "canvas",
-            "tests": [
-                {"in": [], "out": [
-                    {"typ": "c+", "pattern": "self\\.length = x2 - x1", "ignore": "w"},
-                    {"typ": "c+", "pattern": "self\\.height = y2 - y1", "ignore": "w"},
-                    {"typ": "c+", "pattern": "self\\.colour = Rectangle\\.COLOURS\\[colour_name]", "ignore": "w"},
-                    {"typ": "c+", "pattern": "self\\.draw\\(\\)", "ignore": "w"}
-                ]}
-			]
-        },
-        {
-            "id": "conass03",
-            "name": "Ex. 3 (example)",
-            "guide": "c03.md",
-            "py": "c03.py",
-			"isExample": "True"
-        },
-        {
-            "id": "conass04",
-            "name": "Ex. 4 (task)",
-            "guide": "c04.md",
-            "py": "c04.py",
-            "tests": [{
-                "in": [],
-                "out": "4\nname 'csdept' is not defined\nStudent(Adam, 1) Student(John, 2) Student(Mia, 3) Student(Charlie, 4)"
-            }]
+          "in": [],
+          "out": [
+            {
+              "typ": "c+",
+              "pattern": "self\\.length",
+              "ignore": "w"
+            },
+            {
+              "typ": "c+",
+              "pattern": "y2 - y1",
+              "ignore": "w"
+            },
+            {
+              "typ": "c+",
+              "pattern": "self\\.colour",
+              "ignore": "w"
+            },
+            {
+              "typ": "c+",
+              "pattern": " = Rectangle\\.COLOURS\\[colour_name]",
+              "ignore": "w"
+            },
+            {
+              "typ": "c+",
+              "pattern": "self\\.draw\\(\\)",
+              "ignore": "w"
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": "conass03",
+      "name": "Ex. 3 (example)",
+      "guide": "c03.md",
+      "py": "c03.py",
+      "isExample": "True"
+    },
+    {
+      "id": "conass04",
+      "name": "Ex. 4 (task)",
+      "guide": "c04.md",
+      "py": "c04.py",
+      "tests": [
+        {
+          "in": [],
+          "out": "4\nError handled as expected: name 'csdept' is not defined\nStudent(Adam, 1) Student(John, 2) Student(Mia, 3) Student(Charlie, 4)"
+        }
+      ]
+    }
+  ]
 }
