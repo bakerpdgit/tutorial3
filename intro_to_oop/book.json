@@ -7,7 +7,7 @@
             "name": "Ex. 1 (example)",
             "guide": "./c01.md",
             "py": "./c01.py",
-			"isExample": true
+			"isExample": "True"
         },
         {
             "id": "introoop02",
@@ -26,14 +26,14 @@
             "name": "Ex. 3 (example)",
             "guide": "c03.md",
             "py": "c03.py",
-			"isExample": true
+			"isExample": "True"
         },
         {
             "id": "introoop04",
             "name": "Ex. 4 (example)",
             "guide": "c04.md",
             "py": "c04.py",
-            "isExample": true
+            "isExample": "True"
         },
         {
             "id": "introoop05",

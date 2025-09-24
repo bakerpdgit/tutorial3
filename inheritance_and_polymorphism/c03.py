@@ -1,44 +1,52 @@
-class Dog:
+class User:
+    """
+        Class for a user that has a username and email
+    """
+    def __init__(self, username: str, email: str):
+        self._username: str = username # protected attribute
+        self._email: str = email # protected attribute
 
-  def __init__(self):
-    pass
+    @property
+    def username(self):
+        return self._username
 
-  def make_sound(self):
-    print("Woof!")
+    @property
+    def email(self):
+        return self._email
 
+    def view_dashboard(self):
+        print("viewing dashboard")
 
-class Cat:
+    def __repr__(self):
+        return f"User({self._username})"
 
-  def __init__(self):
-    pass
+class Moderator(User):
+    """
+        Moderator can ban users
+    """
+    def __init__(self, username: str, email: str):
+        super().__init__(username, email)
 
-  def make_sound(self):
-    print("Meow!")
+    def ban_user(self, user: User):
+        print(f"banned {user}")
 
+class Admin(Moderator):
+    """
+        Admin can ban and delete users
+    """
+    def delete_user(self, user: User):
+        print(f"deleted {user}")
 
-class Bulldog(Dog):
-  '''Bulldog class, inherits from Dog'''
+# make new user, moderator and admin
+user = User("johndoe", "john@example.com")
+mod = Moderator("mod_jane", "jane@example.com")
+admin = Admin("admin_bob", "bob@example.com")
 
-  def __init__(self):
-    super().__init__()
+# methods are inherited
+user.view_dashboard()
+mod.view_dashboard()
+mod.ban_user(user)
+admin.view_dashboard()
+admin.ban_user(user)
+admin.delete_user(user)
 
-  def make_sound(self):  # OVERRIDING: Override method inherited from Dog
-    print("Woof! I'm a Bulldog!")
-
-
-class PersianCat(Cat):
-  '''Persian Cat class, inherits from Cat'''
-
-  def __init__(self):
-    super().__init__()
-
-  def make_sound(self):  # OVERRIDING: Override method inherited from Cat
-    print("Meow! I'm a Persian Cat!")
-
-
-# Create instances of each class and add them to a list
-my_pets = [Dog(), Cat(), Bulldog(), PersianCat()]
-
-# RUN-TIME POLYMORPHISM: one method interface can be called for objects of different classes
-for pet in my_pets:
-  pet.make_sound()
