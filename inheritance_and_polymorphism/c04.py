@@ -1,57 +1,48 @@
-class Animal:
-    """
-        Superclass for all the animals
-    """
-    def __init__(self, name: str) -> None:
-        self._name = name # protected attribute
-
-    @property
-    def name(self) -> str:
-        return self._name
-
-    # to use the type annotations, we must define the speak() method here
-    # it will still run without, but it is best to define it
-    # this is a virtual method
-    def speak(self) -> None:
-        pass
+from math import pi
 
 
-class Dog(Animal):
-    """
-        Dog has a speak() method
-    """
-    def __init__(self, name: str) -> None:
-        super().__init__(name) # superconstructor
+# An abstract base class
+class Shape:
 
-    def speak(self) -> None: # method overriding
-        print("Woof!")
+  def __init__(self):
+    pass
 
-class Cat(Animal):
-    """
-        Cat has a speak() method
-    """
-    def __init__(self, name: str) -> None:
-        super().__init__(name) # superconstructor
-    
-    def speak(self) -> None: # method overriding
-        print("Meow")
+  def area(self):
+    # NOTE: This is a placeholder (abstract) method that will be overridden by subclasses
+    # This makes Shape an abstract class because it has an abstract method and so should not be used directly
+    pass
 
-class Horse(Animal):
-    """
-        Horse has a speak() method
-    """
-    def __init__(self, name: str) -> None:
-        super().__init__(name) # superconstructor
 
-    def speak(self) -> None: # method overriding
-        print("Neigh")
+class Rectangle(______):
+  def __init__(self, length, width):
+    _____().__init__()
+    self.length = length
+    self.width = width
 
-    def dosomething(self) -> None:
-        print("hey hey hey")
+  def area(self):
+    return _______ * _______
 
-# this will work because Dog, Cat, horse all have a speak() method
-# this is an example of polymorphism
-animals : list[Animal] = [Dog("dog"), Cat("cat"), Horse("horse")]
-for animal in animals:
-    animal.speak()
 
+class Circle(_____):
+  def __init__(self, radius):
+    super().________
+    self.radius = radius
+
+  def ____(self):
+    return pi * _________ ** 2
+
+
+class Triangle(_____):
+  def __init__(self, base, height):
+    _____().__init__()
+    self.base = base
+    self.height = height
+
+  def area(self):
+    return 0.5 * ________ * _________
+
+
+shapes = [Rectangle(4, 5), Circle(3), Triangle(6, 8)]
+
+for shape in _______:
+  print("Area of shape:", shape.______())

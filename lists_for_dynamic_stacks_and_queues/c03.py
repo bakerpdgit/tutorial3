@@ -1,21 +1,19 @@
-from typing import Any
-
 class Queue:
-    def __init__(self) -> None:
-        self._items: list[Any] = []
+    def __init__(self):
+        self._items = []
 
-    def enqueue(self, item: Any) -> None:
+    def enqueue(self, item):
         self._items.append(item)
 
-    def dequeue(self) -> Any:
+    def dequeue(self):
         if self.is_empty():
             raise Exception("Queue is empty")
         return self._items.pop(0)
     
-    def is_empty(self) -> bool:
+    def is_empty(self):
         return self._items == []
     
-    def size(self) -> int:
+    def size(self):
         return len(self._items)
     
 my_queue = Queue()

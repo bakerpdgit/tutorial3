@@ -51,6 +51,11 @@
       "id": "LAP",
       "name": "Lambdas and partials",
       "bookLink": "./lambdas/book.json"
+    },
+    {
+      "id": "ffp",
+      "name": "Further functional programming",
+      "bookLink": "./further_fp/book.json"
     }
   ]
 }

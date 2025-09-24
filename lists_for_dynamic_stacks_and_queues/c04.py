@@ -1,41 +1,39 @@
-from typing import Any
-
 class Stack:
-    def __init__(self) -> None:
-        self._items: list[Any] = []
+    def __init__(self):
+        self._items = []
 
-    def push(self, item: Any) -> None:
+    def push(self, item):
         self._items.append(item)
 
-    def pop(self) -> Any:
+    def pop(self):
         if self.is_empty():
             raise Exception("Stack is empty")
         return self._items.pop()
     
-    def is_empty(self) -> bool:
+    def is_empty(self):
         return self._items == []
     
-    def peek(self) -> Any:
+    def peek(self):
         return self._items[-1]
     
 class Queue:
-    def __init__(self) -> None:
-        self._items: list[Any] = []
+    def __init__(self):
+        self._items = []
 
     # ==> complete the two essential queue methods
 
-    def enqueue(self, item : Any):
+    def enqueue(self, item):
         self._items.__________________
 
-    def dequeue(self) -> Any:
+    def dequeue(self):
         if self.____________:
             raise Exception("Queue is empty")
         return self.____________
     
-    def is_empty(self) -> bool:
+    def is_empty(self):
         return self._items == []
     
-    def size(self) -> int:
+    def size(self):
         return len(self._items)
     
 my_queue = Queue()

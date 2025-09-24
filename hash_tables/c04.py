@@ -1,10 +1,8 @@
-from typing import Any, Optional
-
 class LinkedListNode:
 
-    def __init__(self, value: Any, next: Optional["LinkedListNode"]):
-        self.value: Any = value
-        self.next: Optional["LinkedListNode"] = next
+    def __init__(self, value, next):
+        self.value = value
+        self.next = next
     
     def __repr__(self):
         return f"{self.value}/{self.next}"
@@ -12,18 +10,18 @@ class LinkedListNode:
 
 class HashTable:
 
-    def __init__(self, size: int) -> None:
-        self.__size: int = _______
-        self.__array: list[Any] = [None]*_______
+    def __init__(self, size):
+        self.__size = _______
+        self.__array = [None]*_______
 
     
     '''Hash Function'''
-    def __hash(self, key : str) -> int:
+    def __hash(self, key : str):
         return sum([ord(i) for i in key]) % self.__size
     
     
     '''Lookup with Chaining Collision Handling'''
-    def lookup(self, key : str) -> Any:
+    def lookup(self, key : str):
 
         address = self.__hash(key) # Calculate address
 
@@ -46,7 +44,7 @@ class HashTable:
     
 
     '''Insert with Chaining Collision Handling'''
-    def insert(self, key : str, value: Any) -> None: # Insert method
+    def insert(self, key : str, value): # Insert method
 
         address = self.__hash(key) # Calculate address
 
@@ -66,8 +64,7 @@ class HashTable:
             curr.next = _______________ # Add the next node on
             
             
-    '''String representation'''
-    def __repr__(self) -> str: # Method to show array when object is printed
+    def __repr__(self): # Method to show array when object is printed
         return str(self.__array)
     
 

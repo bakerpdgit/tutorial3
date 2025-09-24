@@ -7,7 +7,7 @@
       "name": "Ex. 1 (example)",
       "guide": "./c01.md",
       "py": "./c01.py",
-      "isExample": "True"
+      "isExample": true
     },
     {
       "id": "abstandstat02",
@@ -26,7 +26,7 @@
       "name": "Ex. 3 (example)",
       "guide": "./c03.md",
       "py": "./c03.py",
-      "isExample": "True"
+      "isExample": true
     },
     {
       "id": "abstandstat04",
