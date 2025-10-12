@@ -1,0 +1,124 @@
+{
+  "name": "Match... case... statements",
+  "id": "match",
+  "children": [
+    {
+      "id": "match01",
+      "name": "Ex. 1 (example)",
+      "guide": "./c01.md",
+      "py": "./c01.py",
+      "isExample": "True"
+    },
+    {
+      "id": "match02",
+      "name": "Ex. 2 (task)",
+      "guide": "c02.md",
+      "py": "c02.py",
+      "tests": [
+        {
+          "in": ["Jakarta", "0", "1089", "2178", "+"],
+          "out": [
+            {
+              "typ": "+",
+              "pattern": "06°10′S 106°49′E"
+            },
+            {
+              "typ": "+",
+              "pattern": "That's my favourite too!"
+            },
+            {
+              "typ": "+",
+              "pattern": "3267"
+            },
+            {
+              "typ": "c-",
+              "pattern": "if .+:"
+            },
+            {
+              "typ": "c+",
+              "pattern": "match.+:"
+            },
+            {
+              "typ": "c+",
+              "pattern": "case.+:"
+            },
+            {
+              "typ": "c+",
+              "pattern": "case _:"
+            }
+          ]
+        },
+        {
+          "in": ["Kinshasa", "4", "6432", "9", "-"],
+          "out": [
+            {
+              "typ": "+",
+              "pattern": "I don't know where Kinshasa is"
+            },
+            {
+              "typ": "+",
+              "pattern": "Too big!"
+            },
+            {
+              "typ": "+",
+              "pattern": "6423"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "match03",
+      "name": "Ex. 3 (example)",
+      "guide": "./c03.md",
+      "py": "./c03.py",
+      "isExample": "True"
+    },
+    {
+      "id": "match04",
+      "name": "Ex. 4 (task)",
+      "guide": "./c04.md",
+      "py": "./c04.py",
+      "tests": [
+        {
+          "in": [],
+          "out": [
+            {
+              "typ": "+",
+              "pattern": "6\n3\n0\n6\n3\n1\n\\[3, 2, 1\\]\n\\[3\\]\n\\[\\]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "match05",
+      "name": "Ex. 5 (example)",
+      "guide": "./c05.md",
+      "py": "./c05.py",
+      "isExample": "True"
+    },
+    {
+      "id": "match06",
+      "name": "Ex. 6 (task)",
+      "guide": "./c06.md",
+      "py": "./c06.py",
+      "tests": [
+        {
+          "in": [],
+          "out": [
+            {
+              "typ": "+",
+              "pattern": "Connecting to channel Two\nUnable to execute synchronise: connection not established\nInvalid timestamp\nSynchronising to timestamp 20\nUnable to execute authenticate: connection not established\nCouldn't authenticate connection\nAuthenticated!\nAuthenticated with advanced security\nUnable to execute send: connection not established\nalike\nindignityin\nVeronawhere\nwelay\n\nMalformed command\nMalformed command\nMalformed command\nMalformed command\nMalformed command\nMalformed command"
+            },
+            {
+              "typ": "c+",
+              "pattern": "case",
+              "count": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
