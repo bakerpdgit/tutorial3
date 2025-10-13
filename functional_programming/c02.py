@@ -1,6 +1,8 @@
 from typing import Callable
 
 def create_printer(string: str) -> Callable[[], None]:
+    # Python lets you define one function inside another. The inner function is a local variable, only bound to the name
+    # `printer` within the scope of the outer function, but can be returned.
     def printer() -> None:
         print(string)
 

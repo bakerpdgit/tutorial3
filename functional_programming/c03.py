@@ -1,16 +1,27 @@
-def make_uppercase(string: str) -> str:
-    return string.upper()
+def f(x):
+    return 2 * x + 4
 
 
-animal_names: list[str] = ["monkey", "dog", "fish", "bird", "leopard", "zebra"]
+def g(x):
+    return 3 * x + 3
 
-# No conversion required
-for name in map(make_uppercase, animal_names):
-    print(name)
 
-# Prints "map object"
-print(map(make_uppercase, animal_names))
+def f_compose_g(x):
+    return f(g(x))
 
-# Prints a list
-print(list(map(make_uppercase, animal_names)))
 
+print(f_compose_g(42))
+
+
+def capitalise_heads(words):
+    for word in words:
+        yield word[0].upper() + word[1:]
+
+
+# We can compose multiple functions in a row
+# This function could be described as `" ".join ∘ capitalise_heads ∘ str.split`
+def title_case(string):
+    return " ".join(capitalise_heads(str.split(string)))
+
+
+print(title_case("hello, world!"))

@@ -23,16 +23,54 @@
         {
             "id": "fp03",
             "name": "Ex. 3 (example)",
-            "guide": "c03.md",
+            "guide": "./c03.md",
             "py": "c03.py",
-			"isExample": "True"
+            "isExample": true
         },
         {
             "id": "fp04",
-            "name": "Ex. 4 (example)",
+            "name": "Ex. 4 (task)",
             "guide": "c04.md",
             "py": "c04.py",
-            "isExample": "True"
+            "tests": [
+                {
+                    "in": [],
+                    "out": [
+                        {
+                            "typ": "+",
+                            "pattern": "drop_two can be expressed as drop_first ∘ drop_first"
+                        },
+                        {
+                            "typ": "+",
+                            "pattern": "drop_last can be expressed as reverse ∘ drop_first ∘ reverse"
+                        },
+                        {
+                            "typ": "+",
+                            "pattern": "del_first_word can be expressed as concat ∘ drop_first ∘ drop_first ∘ partition"
+                        },
+                        {
+                            "typ": "c+",
+                            "pattern": "return(\\w+\\(){6}\\w+\\){6}",
+                            "ignore": "w"
+                        },
+                        {
+                            "typ": "s+",
+                            "statement": "delete_last_word('Once, upon a midnight dreary')",
+                            "pattern": "^Once, upon a midnight$"
+                        },
+                        {
+                            "typ": "s+",
+                            "statement": "delete_last_word('To be or not to be, that is the question')",
+                            "pattern": "^To be or not to be, that is the$"
+                        },
+                        {
+                            "typ": "s+",
+                            "statement": "delete_last_word('Supercalifragilisticexpialidocious')",
+                            "pattern": "^$"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "fp05",
@@ -42,7 +80,17 @@
             "tests": [
                 {
                     "in": [],
-                    "out": "34681214\n[3, 4, 6, 8, 12, 14]"
+                    "out": [
+                        {
+                            "typ": "+",
+                            "pattern": "262"
+                        },
+                        {
+                            "typ": "+",
+                            "pattern": "When Shall We Three Meet Again",
+                            "count": 2
+                        }
+                    ]
                 }
             ]
         }

@@ -1,23 +1,23 @@
-from functools import reduce
+def compose(f, g):
+    ...
 
 
-def add_one(num):
-    return num + 1
+# Tests
+def f(x):
+    return 2 * x + 4
 
 
-def concatenate(a, b):
-    return a + b
+def g(x):
+    return 3 * x + 3
 
 
-def add_to_list(lst, value):
-    return lst + [value]
+def capitalise_heads(words):
+    for word in words:
+        yield word[0].upper() + word[1:]
 
 
-nums = [2, 3, 5, 7, 11, 13]
-nums = list(___(add_one, ___))
-strings = map(___, ___)
-concatenated = ___(___, ___)
-print(concatenated)
-
-nums = reduce(___, ___, ___)
-print(nums)
+print(compose(f, g)(42))
+# Composing more than two functions in a row takes multiple calls to `compose`, which may be arranged how you wish as
+# long as the functions being composed are in the right order
+print(compose(compose(" ".join, capitalise_heads), str.split)("when shall we three meet again"))
+print(compose(" ".join, compose(capitalise_heads, str.split))("when shall we three meet again"))
