@@ -2,7 +2,7 @@ from functools import partial
 
 
 def exponentiate(base, exponent):
-    return base ** exponent
+  return base ** exponent
 
 
 power_of_two = partial(exponentiate, 2)

@@ -12,7 +12,8 @@ class Skins:
 
   @staticmethod
   def get_skin_names():  # STATIC METHOD to get all skin names
-    return [attr for attr in dir(Skins) if not callable(getattr(Skins, attr)) and not attr.startswith("__")]
+    return [attr for attr in dir(Skins) if not callable(
+        getattr(Skins, attr)) and not attr.startswith("__")]
 
   @staticmethod
   def get_skin_values():  # STATIC METHOD to get all skin values - lookup partial if interested!

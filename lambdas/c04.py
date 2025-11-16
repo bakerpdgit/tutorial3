@@ -1,11 +1,11 @@
 def get_character(string, position):
-    return string[position]
+  return string[position]
 
 
 def remove_letters(string, letters):
-    for letter in letters:
-        string = string.replace(letter, "")
-    return string
+  for letter in letters:
+    string = string.replace(letter, "")
+  return string
 
 
 line = "In fair Verona where we lay our scene"

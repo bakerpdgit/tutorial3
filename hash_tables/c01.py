@@ -1,51 +1,56 @@
 from typing import Any
 
 # Hash Table Class
+
+
 class HashTable:
 
-    def __init__(self, size : int) -> None:  # Constructor
+  def __init__(self, size: int) -> None:  # Constructor
 
-        self.__size : int = size  # Save the size
-        self.__array : list[Any] = [None]*size  # Create underlying array (using python list)
+    self.__size: int = size  # Save the size
+    # Create underlying array (using python list)
+    self.__array: list[Any] = [None] * size
 
-    '''Hash Function'''
+  '''Hash Function'''
 
-    def __hash(self, key: str) -> int:  # Simple hash function for demonstration (that isn't very good!)
-        # Sum up ASCII values for each character and mod by size of hash table
-        return sum([ord(i) for i in key]) % self.__size
+  def __hash(self, key: str) -> int:  # Simple hash function for demonstration (that isn't very good!)
+    # Sum up ASCII values for each character and mod by size of hash table
+    return sum([ord(i) for i in key]) % self.__size
 
-    '''Lookup'''
+  '''Lookup'''
 
-    def lookup(self, key: str) -> Any:  # Lookup method, returns item if found, otherwise raises an error
-        address = self.__hash(key)
-        if (item := self.__array[address]) is not None:
-            return item
-        raise Exception(f"{key} is not in the hash table")
+  def lookup(self, key: str) -> Any:  # Lookup method, returns item if found, otherwise raises an error
+    address = self.__hash(key)
+    if (item := self.__array[address]) is not None:
+      return item
+    raise Exception(f"{key} is not in the hash table")
 
-    '''Insert'''
+  '''Insert'''
 
-    def insert(self, key: str, value) -> None:  # Insert method (needs to be modified to handle collisions!!!)
-        address = self.__hash(key)
-        self.__array[address] = value
+  # Insert method (needs to be modified to handle collisions!!!)
+  def insert(self, key: str, value) -> None:
+    address = self.__hash(key)
+    self.__array[address] = value
 
-    '''String representation'''
+  '''String representation'''
 
-    def __repr__(self) -> str:  # Method to show array when object is printed
-        return str(self.__array)
+  def __repr__(self) -> str:  # Method to show array when object is printed
+    return str(self.__array)
 
 
 my_hash_table = HashTable(100)  # Create new hash table
 
 try:
 
-    for key, value in [("Apple", 1), ("Orange", 2), ("Banana", 5), ("Grape", 3), ("Watermelon", 10)]:
-        my_hash_table.insert(key, value)
+  for key, value in [("Apple", 1), ("Orange", 2),
+                     ("Banana", 5), ("Grape", 3), ("Watermelon", 10)]:
+    my_hash_table.insert(key, value)
 
-    print(my_hash_table)  # Just to show what the hash table's array looks like
+  print(my_hash_table)  # Just to show what the hash table's array looks like
 
-    print(my_hash_table.lookup("Watermelon"))  # This should work fine
+  print(my_hash_table.lookup("Watermelon"))  # This should work fine
 # This should throw an error as "Peach" is not in the hash table
-    print(my_hash_table.lookup("Peach"))
+  print(my_hash_table.lookup("Peach"))
 
 except Exception as err:  # Catch errors
-    print(err)
+  print(err)

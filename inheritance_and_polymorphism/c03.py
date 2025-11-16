@@ -1,41 +1,47 @@
 class User:
-    """
-        Class for a user that has a username and email
-    """
-    def __init__(self, username: str, email: str):
-        self._username: str = username # protected attribute
-        self._email: str = email # protected attribute
+  """
+      Class for a user that has a username and email
+  """
 
-    @property
-    def username(self):
-        return self._username
+  def __init__(self, username: str, email: str):
+    self._username: str = username  # protected attribute
+    self._email: str = email  # protected attribute
 
-    @property
-    def email(self):
-        return self._email
+  @property
+  def username(self):
+    return self._username
 
-    def view_dashboard(self):
-        print("viewing dashboard")
+  @property
+  def email(self):
+    return self._email
 
-    def __repr__(self):
-        return f"User({self._username})"
+  def view_dashboard(self):
+    print("viewing dashboard")
+
+  def __repr__(self):
+    return f"User({self._username})"
+
 
 class Moderator(User):
-    """
-        Moderator can ban users
-    """
-    def __init__(self, username: str, email: str):
-        super().__init__(username, email)
+  """
+      Moderator can ban users
+  """
 
-    def ban_user(self, user: User):
-        print(f"banned {user}")
+  def __init__(self, username: str, email: str):
+    super().__init__(username, email)
+
+  def ban_user(self, user: User):
+    print(f"banned {user}")
+
 
 class Admin(Moderator):
-    """
-        Admin can ban and delete users
-    """
-    def delete_user(self, user: User):
-        print(f"deleted {user}")
+  """
+      Admin can ban and delete users
+  """
+
+  def delete_user(self, user: User):
+    print(f"deleted {user}")
+
 
 # make new user, moderator and admin
 user = User("johndoe", "john@example.com")
@@ -49,4 +55,3 @@ mod.ban_user(user)
 admin.view_dashboard()
 admin.ban_user(user)
 admin.delete_user(user)
-

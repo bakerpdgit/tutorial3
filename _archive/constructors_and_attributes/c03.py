@@ -36,7 +36,8 @@ class Person:
   ...
 
 
-# Person has a separate existence, with an instance being assigned to its own variable
+# Person has a separate existence, with an instance being assigned to its
+# own variable
 docBrown = Person("Doc Brown", 65, [])
 delorean = Car(6)
 delorean.drive(docBrown)

@@ -2,15 +2,15 @@ from functools import reduce
 
 
 def add_one(num):
-    return num + 1
+  return num + 1
 
 
 def concatenate(a, b):
-    return a + b
+  return a + b
 
 
 def add_to_list(lst, value):
-    return lst + [value]
+  return lst + [value]
 
 
 nums = [2, 3, 5, 7, 11, 13]

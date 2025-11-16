@@ -4,18 +4,18 @@ init = ...
 
 
 def prepare_predicate(f):
-    # prepare_predicate returns a function
-    def prepared(a, b):
-        ...
-    return prepared
+  # prepare_predicate returns a function
+  def prepared(a, b):
+    ...
+  return prepared
 
 
 def is_large(x):
-    return x > 4
+  return x > 4
 
 
 def const_false(_):
-    return False
+  return False
 
 
 print(list(filter(is_large, [1, 7, 2, 6, 8, 2, 3])))

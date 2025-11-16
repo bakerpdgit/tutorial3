@@ -48,14 +48,19 @@
       "bookLink": "./functional_programming/book.json"
     },
     {
+      "id": "MFF",
+      "name": "Map, filter and fold",
+      "bookLink": "./map_filter_fold/book.json"
+    },
+    {
       "id": "LAP",
       "name": "Lambdas and partials",
       "bookLink": "./lambdas/book.json"
     },
     {
-      "id": "ffp",
-      "name": "Further functional programming",
-      "bookLink": "./further_fp/book.json"
+      "id": "MC",
+      "name": "Matching with cases",
+      "bookLink": "./match_case/book.json"
     }
   ]
 }
